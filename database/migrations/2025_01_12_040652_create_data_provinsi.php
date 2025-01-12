@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('data_provinsi', function (Blueprint $table) {
             $table->id();
+            $table->integer('tahun');
+            $table->unsignedBigInteger('nama_data_id');
+            $table->unsignedBigInteger('provinsi_id');
+            $table->decimal('jumlah');
+            
+            $table->foreign('provinsi_id')->references('id')->on('provinsi')->onDelete('cascade');
+            $table->foreign('nama_data_id')->references('id')->on('nama_data')->onDelete('cascade');
             $table->timestamps();
         });
     }
