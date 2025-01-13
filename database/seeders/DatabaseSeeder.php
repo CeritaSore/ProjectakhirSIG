@@ -15,11 +15,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $names = ['admin', 'staff', 'guest'];
+        foreach ($names as $name) {
+            for ($i = 1; $i <= 3; $i++) {
+                User::create([
+                    'name' => $name,
+                    'email' => $name . $i . '@gmail.com', // Append $i to make email unique
+                    'password' => bcrypt('password'),
+                ]);
+            }
+        }
         DB::table('provinsi')->insert([
             ['id' => 11, 'nama' => 'ACEH', 'alt_nama' => 'ACEH', 'lat' => 4.368550, 'long' => 97.025300],
             ['id' => 12, 'nama' => 'SUMATERA UTARA', 'alt_nama' => 'SUMATERA UTARA', 'lat' => 2.192350, 'long' => 99.381220],
