@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KabupatenController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\ProvinsiController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,4 @@ Route::get('/provinsi', [ProvinsiController::class, 'index'])->name('provinsi.in
 
 Route::get('/kabupaten', [KabupatenController::class, 'index'])->name('kabupaten.index');
 
+Route::get('/persebaran', [MapController::class, 'index'])->name('persebaran.index');

@@ -20,10 +20,23 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!--
 
 -->
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
+        #map {
+            height: 800px;
+        }
+    </style>
     @yield('head')
 </head>
 
@@ -64,7 +77,8 @@
 
         <nav class="main-navigation navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="assets/images/white-logo.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/white-logo.png"
+                        alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -72,7 +86,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link @yield('persebaran')" href="/persebaran">Peta Persebaran Sekolah</a>
+                            <a class="nav-link @yield('persebaran')" href="{{ route('persebaran.index') }}">Peta Persebaran Sekolah</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('provinsi')" href="{{ route('provinsi.index') }}">Provinsi</a>
@@ -106,6 +120,8 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     @yield('content')
 
     <footer>
