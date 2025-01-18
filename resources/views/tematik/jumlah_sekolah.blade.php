@@ -1,6 +1,6 @@
 @extends('layout.app')
-@section('judul', 'Peta Jumlah Penduduk di Sulawesi Selatan')
-@section('persebaran', 'active')
+@section('judul', 'Peta Jumlah Sekolah Menengah Pertama di Sulawesi Selatan')
+@section('jumlah_sekolah', 'active')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
@@ -13,21 +13,21 @@
                 }).addTo(map);
 
                 // Fungsi untuk mendapatkan warna berdasarkan jumlah penduduk
-                function getColor(penduduk) {
-                    return penduduk > 1000000 ? '#800026' :
-                           penduduk > 500000  ? '#BD0026' :
-                           penduduk > 200000  ? '#E31A1C' :
-                           penduduk > 100000  ? '#FC4E2A' :
-                           penduduk > 50000   ? '#FD8D3C' :
-                           penduduk > 20000   ? '#FEB24C' :
-                           penduduk > 10000   ? '#FED976' :
-                                              '#FFEDA0';
+                function getColor(jumlah_sekolah) {
+                    return jumlah_sekolah > 1000 ? '#00008B' :
+                           jumlah_sekolah > 500  ? '#0000CD' :
+                           jumlah_sekolah > 200  ? '#1E90FF' :
+                           jumlah_sekolah > 100  ? '#4682B4' :
+                           jumlah_sekolah > 50  ? '#5F9EA0' :
+                           jumlah_sekolah > 20   ? '#87CEEB' :
+                           jumlah_sekolah > 10   ? '#ADD8E6' :
+                                              '#E0FFFF';
                 }
 
-                // Fungsi untuk mendapatkan style berdasarkan jumlah penduduk
+                // Fungsi untuk mendapatkan style berdasarkan jumlah jumlah_sekolah
                 function style(feature) {
                     return {
-                        fillColor: getColor(feature.properties.penduduk),
+                        fillColor: getColor(feature.properties.jumlah_sekolah),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -86,7 +86,7 @@
                 // Method untuk memperbarui informasi
                 info.update = function (props) {
                     this._div.innerHTML = '<h4>Kabupaten/Kota</h4>' +  (props ?
-                        '<b>' + props.name + '</b><br />' + props.penduduk.toLocaleString() + ' penduduk'
+                        '<b>' + props.name + '</b><br />' + props.jumlah_sekolah.toLocaleString() + ' jumlah_sekolah'
                         : 'Hover over a region');
                 };
 
@@ -97,7 +97,7 @@
 
                 legend.onAdd = function (map) {
                     var div = L.DomUtil.create('div', 'info legend'),
-                        grades = [0, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+                        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
                         labels = [];
 
                     // loop through our density intervals and generate a label with a colored square for each interval
