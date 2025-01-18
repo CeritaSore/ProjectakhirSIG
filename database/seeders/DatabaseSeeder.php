@@ -1035,5 +1035,6 @@ class DatabaseSeeder extends Seeder
 
 
         ]);
+        $this->call(SulawesiLocationSeederTable::class);
     }
 }
