@@ -15,7 +15,6 @@ Route::get('/tentang', function () {
 });
 
 Route::get('/provinsi', [ProvinsiController::class, 'index'])->name('provinsi.index');
-
 Route::get('/kabupaten', [KabupatenController::class, 'index'])->name('kabupaten.index');
 
 Route::get('/persebaran', [MapController::class, 'index'])->name('persebaran.index');

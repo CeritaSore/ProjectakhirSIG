@@ -73,68 +73,51 @@
         </svg>
     </div>
 
-    <header id="#top">
+    <header id="top">
         <nav class="main-navigation navbar navbar-expand-lg navbar-light">
-            <div class="container">
-
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/tentang"><img src="assets/images/white-logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        {{-- Peta Non Spasial Penduduk --}}
+                        <!-- Dropdown Peta Penduduk -->
                         <li class="nav-item">
                             <div class="dropdown mt-2">
-                                <button class="btn btn-secondary dropdown-toggle @yield('kepadatan_penduduk') @yield('persebaran')"
-                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle @yield('kepadatan_penduduk') @yield('persebaran')" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Peta Penduduk
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="nav-link @yield('persebaran')"
-                                            href="{{ route('persebaran.index') }}">Jumlah
-                                            Penduduk</a></li>
-                                    <li><a class="nav-link @yield('kepadatan_penduduk')"
-                                            href="{{ route('kepadatan.penduduk') }}"> Kepadatan
-                                            Penduduk</a></li>
+                                    <li><a class="nav-link @yield('persebaran')" href="{{ route('persebaran.index') }}">Jumlah Penduduk</a></li>
+                                    <li><a class="nav-link @yield('kepadatan_penduduk')" href="{{ route('kepadatan.penduduk') }}">Kepadatan Penduduk</a></li>
                                 </ul>
                             </div>
                         </li>
-                        {{-- Peta Non Spasial Penduduk --}}
-
-                        {{-- Peta Non Spasial Sekolah --}}
+                        <!-- Dropdown Peta Sekolah -->
                         <li class="nav-item">
                             <div class="dropdown mt-2">
-                                <button class="btn btn-secondary dropdown-toggle @yield('jumlah_sekolah') @yield('kepadatan_sekolah')"
-                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle @yield('jumlah_sekolah') @yield('kepadatan_sekolah')" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Peta Sekolah Menengah Pertama
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="nav-link @yield('jumlah_sekolah')"
-                                            href="{{ route('jumlah.sekolah') }}">Jumlah
-                                            Sekolah</a></li>
-                                    <li><a class="nav-link @yield('kepadatan_sekolah')"
-                                            href="{{ route('kepadatan.sekolah') }}">Kepadatan
-                                            Sekolah</a></li>
+                                    <li><a class="nav-link @yield('jumlah_sekolah')" href="{{ route('jumlah.sekolah') }}">Jumlah Sekolah</a></li>
+                                    <li><a class="nav-link @yield('kepadatan_sekolah')" href="{{ route('kepadatan.sekolah') }}">Kepadatan Sekolah</a></li>
                                 </ul>
                             </div>
                         </li>
-                        {{-- Peta Non Spasial Sekolah --}}
-
-                        {{-- Peta Non Spasial Guru --}}
+                        <!-- Dropdown Peta Guru -->
                         <li class="nav-item">
                             <div class="dropdown mt-2">
-                                <button class="btn btn-secondary dropdown-toggle @yield('jumlah_guru') @yield('kepadatan_guru')"
-                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn btn-secondary dropdown-toggle @yield('jumlah_guru') @yield('kepadatan_guru')" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Peta Guru Menengah Pertama
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="nav-link @yield('jumlah_guru')"
-                                            href="{{ route('jumlah.guru') }}">Jumlah
-                                            Guru</a></li>
-                                    <li><a class="nav-link @yield('kepadatan_guru')"
-                                            href="{{ route('kepadatan.guru') }}">Kepadatan
-                                            Guru</a></li>
+                                    <li><a class="nav-link @yield('jumlah_guru')" href="{{ route('jumlah.guru') }}">Jumlah Guru</a></li>
+                                    <li><a class="nav-link @yield('kepadatan_guru')" href="{{ route('kepadatan.guru') }}">Kepadatan Guru</a></li>
                                 </ul>
                             </div>
                         </li>
-                        {{-- Peta Non Spasial Guru --}}
-
                         <li class="nav-item">
                             <a class="nav-link @yield('provinsi')" href="{{ route('provinsi.index') }}">Provinsi</a>
                         </li>
@@ -145,11 +128,11 @@
                             <a class="nav-link" href="/tentang">Tentang</a>
                         </li>
                     </ul>
-
+                </div>
             </div>
         </nav>
-
     </header>
+
 
     <div class="main-banner change-name">
         <div class="container">
