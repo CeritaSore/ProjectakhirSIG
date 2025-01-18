@@ -10,8 +10,8 @@ Route::get('/', function () {
     return view('layout/app');
 });
 
-Route::get('/persebaran', function () {
-    return view('tematik/persebaran');
+Route::get('/tentang', function () {
+    return view('tentang');
 });
 
 Route::get('/provinsi', [ProvinsiController::class, 'index'])->name('provinsi.index');

@@ -86,7 +86,7 @@
                 // Method untuk memperbarui informasi
                 info.update = function (props) {
                     this._div.innerHTML = '<h4>Kabupaten/Kota</h4>' +  (props ?
-                        '<b>' + props.name + '</b><br />' + props.penduduk.toLocaleString() + ' penduduk'
+                        '<b>' + props.name + '</b><br />' + props.penduduk.toLocaleString() + 'Jumlah Penduduk'
                         : 'Hover over a region');
                 };
 

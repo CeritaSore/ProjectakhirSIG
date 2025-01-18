@@ -14,30 +14,20 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-572-designer.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!--
 
--->
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+TemplateMo 572 Designer
 
-        #map {
-            height: 800px;
-        }
-    </style>
-    @yield('head')
+https://templatemo.com/tm-572-designer
+
+-->
 </head>
 
 <body>
@@ -74,6 +64,7 @@
     </div>
 
     <header id="#top">
+
         <nav class="main-navigation navbar navbar-expand-lg navbar-light">
             <div class="container">
 
@@ -142,7 +133,7 @@
                             <a class="nav-link @yield('kabupaten')" href="{{ route('kabupaten.index') }}">Kabupaten</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tentang">Tentang</a>
+                            <a class="nav-link active" href="/tentang">Tentang</a>
                         </li>
                     </ul>
 
@@ -151,31 +142,123 @@
 
     </header>
 
-    <div class="main-banner change-name">
+    <div class="page-banner change-name">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-7 offset-lg-3">
                     <div class="header-text">
-                        <h6>Peta Indonesia</h6>
-                        <h2><em>Peta Tematik</em> @yield('judul')</h2>
-                        <div class="white-button">
-                            <a href="peta.html">Peta Kami</a>
-                        </div>
+                        <h2><em>Tentang</em> Kami</h2>
+                        <p>Data Kelompok SIG Rebirth yang telah membuat dan merancang project ini hingga menjadi sesuai
+                            dengan ketentuan yang diujiankan dalam mata kuliah Sistem Informasi Geografis di STT Terpadu
+                            Nurul Fikri Jakarta</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-
     <section class="contact-page-map">
         <div class="container expanded">
-            @yield('content')
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- You can easily copy and paste your own map point from Google Maps -> Share -> Embed a map -->
+
+                    <div id="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15861.145821444023!2d106.82823839767495!3d-6.356954898127369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec6b07b68ea5%3A0x17da46bdf9308386!2sSTT%20Terpadu%20Nurul%20Fikri%20-%20Kampus%20B!5e0!3m2!1sid!2sid!4v1736658900375!5m2!1sid!2sid"
+                            width="100%" height="550px" frameborder="0" style="border:0"
+                            allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section class="contact-us-page">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="contact-page-form">
+                    <div class="row">
+                        <div class="col-lg-4 align-self-center">
+                            <form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-heading">
+                                            <h2>Developer Profile<br><em>SIG Rebirth</em>!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="right-info">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48"
+                                                viewBox="0 0 24 24" width="48">
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                                <path
+                                                    d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                            </svg></div>
+                                        <h6>Fajar Septianto</h6>
+                                        <span>STT Terpadu Nurul Fikri - 0110221171</span>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48"
+                                                viewBox="0 0 24 24" width="48">
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                                <path
+                                                    d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                            </svg></div>
+                                        <h6>Muhammad Salsabil</h6>
+                                        <span>STT Terpadu Nurul Fikri - 0110221178</span>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48"
+                                                viewBox="0 0 24 24" width="48">
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                                <path
+                                                    d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                            </svg></div>
+                                        <h6>Anggi Alfian</h6>
+                                        <span>STT Terpadu Nurul Fikri - 0110221042</span>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="48"
+                                                viewBox="0 0 24 24" width="48">
+                                                <path d="M0 0h24v24H0z" fill="none" />
+                                                <path
+                                                    d="M12 2c-4.97 0-9 4.03-9 9 0 4.17 2.84 7.67 6.69 8.69L12 22l2.31-2.31C18.16 18.67 21 15.17 21 11c0-4.97-4.03-9-9-9zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.3c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                                            </svg></div>
+                                        <h6>Agus Buntung</h6>
+                                        <span>STT Terpadu Nurul Fikri - 01102210xx</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2>Hire us to Work on a Project?</h2>
+                </div>
+                <div class="col-lg-4">
+                    <div class="white-button">
+                        <a href="#">Contact Us Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer>
         <div class="container">
@@ -233,6 +316,7 @@
         </div>
     </footer>
 
+
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -247,8 +331,7 @@
     <script>
         setTimeout(function() {
             $('.loader').fadeToggle();
-        }, 1500);
-
+        }, 2000);
         $("a[href='#top']").click(function() {
             $("html, body").animate({
                 scrollTop: 0
