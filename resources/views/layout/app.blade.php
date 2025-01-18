@@ -86,7 +86,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link @yield('persebaran')" href="{{ route('persebaran.index') }}">Peta Persebaran Sekolah</a>
+                            <a class="nav-link @yield('persebaran')" href="{{ route('persebaran.index') }}">Jumlah Penduduk</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('provinsi')" href="{{ route('provinsi.index') }}">Provinsi</a>

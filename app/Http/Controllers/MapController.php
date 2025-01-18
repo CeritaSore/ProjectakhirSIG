@@ -1,48 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\File;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MapController extends Controller
 {
     public function index()
     {
+        // Ambil data dari database
+        $locations = DB::table('sulawesi_location')->get();
+
         $geojsonData = [];
 
-        $geoJsonFiles = [
-            '7301.geojson',
-            '7302.geojson',
-            '7303.geojson',
-            '7304.geojson',
-            '7305.geojson',
-            '7306.geojson',
-            '7307.geojson',
-            '7308.geojson',
-            '7309.geojson',
-            '7310.geojson',
-            '7311.geojson',
-            '7312.geojson',
-            '7313.geojson',
-            '7314.geojson',
-            '7315.geojson',
-            '7316.geojson',
-            '7317.geojson',
-            '7318.geojson',
-            '7322.geojson',
-            '7325.geojson',
-            '7371.geojson',
-            '7372.geojson',
-            '7373.geojson',
-        ];
+        foreach ($locations as $location) {
+            $filePath = public_path('geojson/' . $location->file);
+            if (File::exists($filePath)) {
+                $geojson = json_decode(File::get($filePath), true);
 
-        foreach ($geoJsonFiles as $file) {
-            $filePath = public_path('geojson/' . $file);
-            $geojsonData[] = json_decode(file_get_contents($filePath), true);
+                // Tambahkan data penduduk ke properti setiap feature
+                foreach ($geojson['features'] as &$feature) {
+                    $feature['properties']['penduduk'] = $location->penduduk;
+                }
+
+                $geojsonData[] = $geojson;
+            } else {
+                // Handle jika file tidak ditemukan
+                Log::warning("File GeoJSON tidak ditemukan: " . $filePath);
+            }
         }
 
         return view('tematik.persebaran', compact('geojsonData'));
     }
-
 }
